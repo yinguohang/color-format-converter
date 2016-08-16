@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Color Format Converter</title>
+        <meta charset='utf-8'>
+        <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    </head>
+    <body>
+        <script>
+            function convert_to_RGB(){
+                var num = parseInt($("#hex").val(), 16);
+                $("#red").val(Math.floor(num / 256 / 256));
+                $("#green").val(Math.floor(num / 256) % 256);
+                $("#blue").val(num % 256);
+            }
+        </script>
+        <input id="hex"/>
+        <button type="button" onclick="convert_to_RGB()">Convert</button>
+        <p>Red:<input id="red"/>Green:<input id="green"/>Blue<input id="blue"/></p>
+    </body>
+</html>
